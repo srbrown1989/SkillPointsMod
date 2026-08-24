@@ -1,0 +1,27 @@
+# Build results
+bin/
+obj/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+
+# VS Code
+.vscode/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Claude Code
+CLAUDE.md
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+*.snupkg
