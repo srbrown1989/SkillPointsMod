@@ -16,4 +16,22 @@
     <PackageReference Include="SPTushonka.DI" Version="4.1.3" />
     <PackageReference Include="SPTushonka.Server.Core" Version="4.1.3" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- Client/ is a separate BepInEx client-mod project (its own .csproj)
+         that this SDK's default globs would otherwise sweep up recursively
+         (Content in particular: Microsoft.NET.Sdk.Web copies arbitrary
+         non-code files to the output directory, which without this would
+         mean Client's own bin/obj ending up nested inside our deployable
+         mod output). -->
+    <Compile Remove="Client\**" />
+    <Content Remove="Client\**" />
+    <EmbeddedResource Remove="Client\**" />
+    <None Remove="Client\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Ships next to the built assembly so ModHelper.GetAbsolutePathToModFolder can find it at runtime -->
+    <None Include="config\config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

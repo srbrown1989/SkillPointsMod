@@ -4,6 +4,9 @@ obj/
 *.user
 *.suo
 
+# Compiled snapshot for manual install -- rebuildable from source, not versioned
+deployable/
+
 # Visual Studio
 .vs/
 

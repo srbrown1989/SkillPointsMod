@@ -1,0 +1,7 @@
+{
+  "skillPointsPerLevel": 1,
+  "startingSkillPoints": 5,
+  "resetCostAmount": 5000000,
+  "resetCostCurrency": "rubles",
+  "debugFreeReset": false
+}
