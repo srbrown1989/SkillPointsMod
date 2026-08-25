@@ -6,11 +6,10 @@ using SPT.Common.Utils;
 
 namespace SkillPointsMod.Client;
 
-// Shared state/HTTP logic used by both the F9 floating overlay and the
-// embedded skills-screen patches, so there's one source of truth for the
-// balance and one place that talks to the server. Both UIs poll this
-// class's state from their own per-frame Update()/OnGUI() calls rather than
-// an event -- the embedded UI's GameObjects come and go with the screen
+// Shared state/HTTP logic used by the embedded skills-screen patches, so
+// there's one source of truth for the balance and one place that talks to
+// the server. Polls this class's state from per-frame Update() calls rather
+// than an event -- the embedded UI's GameObjects come and go with the screen
 // (including via AsyncViewList pooling/reuse of row instances), so polling
 // avoids leaking subscriptions tied to destroyed/reused Unity objects.
 internal static class SkillPointsUiController
